@@ -1,0 +1,57 @@
+
+<main id="main-content" class="page-container" tabindex="-1">
+  <section class="page-hero" aria-labelledby="faculty-title">
+    <p class="eyebrow">Meet Our Experts</p>
+    <h1 id="faculty-title">Our Faculty</h1>
+    <p>
+      Meet the educators and researchers helping shape the future
+      of computer science.
+    </p>
+  </section>
+
+  <section class="content-section" aria-labelledby="directory-title">
+    <h2 id="directory-title">Faculty Directory</h2>
+    <p>Search by faculty name, title, or research area.</p>
+
+    <div class="search-box">
+      <label for="faculty-search">Search faculty</label>
+      <input
+        id="faculty-search"
+        type="search"
+        [(ngModel)]="searchTerm"
+        placeholder="e.g. Artificial Intelligence" />
+
+      <button type="button" *ngIf="searchTerm"
+              (click)="searchTerm = ''">
+        Clear search
+      </button>
+    </div>
+
+    <p aria-live="polite">
+      {{ filteredFaculty.length }} faculty members found
+    </p>
+
+    <div class="faculty-grid">
+      <article class="faculty-card"
+               *ngFor="let member of filteredFaculty">
+        <div class="faculty-avatar" aria-hidden="true">
+          {{ member.initials }}
+        </div>
+
+        <h3>{{ member.name }}</h3>
+        <p class="faculty-title">{{ member.title }}</p>
+
+        <h4>Research interests</h4>
+        <p>{{ member.research }}</p>
+
+        <a [href]="'mailto:' + member.email">
+          Email faculty member
+        </a>
+      </article>
+    </div>
+
+    <p *ngIf="filteredFaculty.length === 0" role="status">
+      No faculty members match your search. Try another keyword.
+    </p>
+  </section>
+</main>

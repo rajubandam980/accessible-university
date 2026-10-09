@@ -1,0 +1,142 @@
+
+<main id="main-content" class="page-container" tabindex="-1">
+  <section class="page-hero" aria-labelledby="contact-title">
+    <p class="eyebrow">We're Here to Help</p>
+    <h1 id="contact-title">Contact Our Department</h1>
+    <p>Have a question about our programs or department? Get in touch.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-information">
+      <h2>Department Information</h2>
+      <p>Reach out to our department for general academic inquiries.</p>
+
+      <div class="contact-item">
+        <h3>Address</h3>
+        <address>
+          Northfield University<br />
+          100 University Avenue<br />
+          Northfield, USA
+        </address>
+      </div>
+
+      <div class="contact-item">
+        <h3>Email</h3>
+        <a href="mailto:cs@example.edu">cs@example.edu</a>
+      </div>
+
+      <div class="contact-item">
+        <h3>Office Hours</h3>
+        <p>Monday–Friday, 9:00 AM–5:00 PM</p>
+      </div>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <h2>Send Us a Message</h2>
+
+      <div *ngIf="submitted" class="success-message"
+           role="status" tabindex="-1">
+        <h3>Thank you, {{ form.name }}!</h3>
+        <p>
+          Your form passed the demo validation. No message has been sent.
+        </p>
+        <button type="button" class="button" (click)="resetForm()">
+          Submit Another Message
+        </button>
+      </div>
+
+      <form *ngIf="!submitted"
+            #contactForm="ngForm"
+            (ngSubmit)="submitForm()"
+            novalidate>
+
+        <div class="form-field">
+          <label for="name">Full name <span>(required)</span></label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            [(ngModel)]="form.name"
+            #nameField="ngModel"
+            required
+            autocomplete="name"
+            [attr.aria-invalid]="nameField.invalid && nameField.touched"
+            [attr.aria-describedby]="nameField.invalid && nameField.touched ? 'name-error' : null" />
+
+          <p id="name-error" class="field-error"
+             *ngIf="nameField.invalid && nameField.touched">
+            Please enter your name.
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email address <span>(required)</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="form.email"
+            #emailField="ngModel"
+            required
+            email
+            autocomplete="email"
+            [attr.aria-invalid]="emailField.invalid && emailField.touched"
+            [attr.aria-describedby]="emailField.invalid && emailField.touched ? 'email-error' : null" />
+
+          <p id="email-error" class="field-error"
+             *ngIf="emailField.invalid && emailField.touched">
+            Please enter a valid email address.
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Subject <span>(required)</span></label>
+          <select
+            id="subject"
+            name="subject"
+            [(ngModel)]="form.subject"
+            #subjectField="ngModel"
+            required
+            [attr.aria-invalid]="subjectField.invalid && subjectField.touched"
+            [attr.aria-describedby]="subjectField.invalid && subjectField.touched ? 'subject-error' : null">
+
+            <option value="">Choose a subject</option>
+            <option value="Programs">Academic programs</option>
+            <option value="Admissions">Admissions</option>
+            <option value="Research">Research opportunities</option>
+            <option value="General">General inquiry</option>
+          </select>
+
+          <p id="subject-error" class="field-error"
+             *ngIf="subjectField.invalid && subjectField.touched">
+            Please select a subject.
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message <span>(required)</span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            [(ngModel)]="form.message"
+            #messageField="ngModel"
+            required
+            minlength="10"
+            [attr.aria-invalid]="messageField.invalid && messageField.touched"
+            [attr.aria-describedby]="messageField.invalid && messageField.touched ? 'message-error' : null">
+          </textarea>
+
+          <p id="message-error" class="field-error"
+             *ngIf="messageField.invalid && messageField.touched">
+            Please enter a message of at least 10 characters.
+          </p>
+        </div>
+
+        <button class="button" type="submit">
+          Submit Message
+        </button>
+      </form>
+    </div>
+  </section>
+</main>

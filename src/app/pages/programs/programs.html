@@ -1,0 +1,65 @@
+
+<main id="main-content" class="page-container" tabindex="-1">
+  <section class="page-hero" aria-labelledby="programs-title">
+    <p class="eyebrow">Learn and Grow</p>
+    <h1 id="programs-title">Academic Programs</h1>
+    <p>Discover a program that matches your interests and career goals.</p>
+  </section>
+
+  <section class="content-section" aria-labelledby="degrees-title">
+    <div class="section-heading">
+      <h2 id="degrees-title">Explore Our Degrees</h2>
+      <p>Choose a study level to explore available programs.</p>
+    </div>
+
+    <div class="filter-group" role="group" aria-label="Filter programs">
+      <button type="button"
+              [class.selected]="selectedLevel === 'All'"
+              [attr.aria-pressed]="selectedLevel === 'All'"
+              (click)="setLevel('All')">
+        All Programs
+      </button>
+
+      <button type="button"
+              [class.selected]="selectedLevel === 'Undergraduate'"
+              [attr.aria-pressed]="selectedLevel === 'Undergraduate'"
+              (click)="setLevel('Undergraduate')">
+        Undergraduate
+      </button>
+
+      <button type="button"
+              [class.selected]="selectedLevel === 'Graduate'"
+              [attr.aria-pressed]="selectedLevel === 'Graduate'"
+              (click)="setLevel('Graduate')">
+        Graduate
+      </button>
+    </div>
+
+    <p class="results-count" aria-live="polite">
+      {{ filteredPrograms.length }} programs found
+    </p>
+
+    <div class="program-grid">
+      <article class="program-card"
+               *ngFor="let program of filteredPrograms">
+        <span class="program-level">{{ program.level }}</span>
+        <h3>{{ program.title }}</h3>
+        <p>{{ program.description }}</p>
+        <p><strong>Typical duration:</strong> {{ program.duration }}</p>
+
+        <h4>Areas of study</h4>
+        <ul>
+          <li *ngFor="let course of program.courses">{{ course }}</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="program-cta">
+    <h2>Ready to explore your future?</h2>
+    <p>Contact the department to learn more about academic opportunities.</p>
+    <a class="button" href="mailto:cs@example.edu">
+      Ask a Question
+    </a>
+  </section>
+</main>

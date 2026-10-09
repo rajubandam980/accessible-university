@@ -1,0 +1,27 @@
+
+<section class="accessibility-tools" aria-labelledby="accessibility-title">
+  <h2 id="accessibility-title">Accessibility tools</h2>
+
+  <div class="tool-actions">
+    <button type="button" (click)="decreaseText()"
+            aria-label="Decrease text size">
+      A−
+    </button>
+
+    <span aria-live="polite">Text size: {{ textSize }}%</span>
+
+    <button type="button" (click)="increaseText()"
+            aria-label="Increase text size">
+      A+
+    </button>
+
+    <button type="button" (click)="toggleContrast()"
+            [attr.aria-pressed]="highContrast">
+      {{ highContrast ? 'Standard contrast' : 'High contrast' }}
+    </button>
+
+    <button type="button" (click)="resetSettings()">
+      Reset
+    </button>
+  </div>
+</section>

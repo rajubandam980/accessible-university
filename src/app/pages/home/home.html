@@ -1,0 +1,84 @@
+
+<main id="main-content" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <p class="eyebrow">Department of Computer Science</p>
+
+      <h1 id="hero-title">
+        Empowering Minds.
+        <span>Building the Future.</span>
+      </h1>
+
+      <p class="hero-description">
+        We advance knowledge and innovation in computing through
+        impactful research, teaching, and collaboration.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-gold" routerLink="/programs">
+          Explore Programs
+        </a>
+
+        <a class="button button-outline" routerLink="/faculty">
+          Meet Our Faculty
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits section-container"
+           aria-labelledby="benefits-title">
+    <div class="section-heading">
+      <p class="eyebrow">Discover Northfield</p>
+      <h2 id="benefits-title">Why Computer Science at Northfield?</h2>
+      <p>
+        Learn, collaborate, and create technology that makes a difference.
+      </p>
+    </div>
+
+    <div class="benefit-grid">
+      <article class="benefit-card" *ngFor="let benefit of benefits">
+        <span class="benefit-icon" aria-hidden="true">
+          {{ benefit.icon }}
+        </span>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="events section-container"
+           aria-labelledby="events-title">
+    <div class="section-heading">
+      <p class="eyebrow">Stay Connected</p>
+      <h2 id="events-title">Upcoming Events</h2>
+      <p>Connect with our department community.</p>
+    </div>
+
+    <div class="event-grid">
+      <article class="event-card" *ngFor="let event of events">
+        <div class="event-date" aria-label="Event date">
+          <span>{{ event.month }}</span>
+          <strong>{{ event.date }}</strong>
+        </div>
+
+        <div class="event-details">
+          <h3>{{ event.title }}</h3>
+          <p>{{ event.time }}</p>
+          <p>{{ event.location }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div>
+      <h2 id="cta-title">Your future in computing starts here.</h2>
+      <p>Discover opportunities to learn, research, and innovate.</p>
+    </div>
+
+    <a class="button button-gold" routerLink="/programs">
+      Explore Our Programs
+    </a>
+  </section>
+</main>

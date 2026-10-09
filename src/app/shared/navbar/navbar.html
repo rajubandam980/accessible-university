@@ -1,0 +1,48 @@
+
+<a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+
+<header class="site-header">
+  <div class="brand">
+    <a routerLink="/" aria-label="Northfield University home"
+       (click)="closeMenu()">
+      <span class="brand-shield" aria-hidden="true">NU</span>
+      <span class="brand-name">
+        NORTHFIELD
+        <span>UNIVERSITY</span>
+      </span>
+    </a>
+
+    <span class="department-name">
+      Department of<br />
+      Computer Science
+    </span>
+  </div>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    [attr.aria-expanded]="menuOpen"
+    aria-controls="primary-navigation"
+    (click)="toggleMenu()">
+    {{ menuOpen ? 'Close menu' : 'Menu' }}
+  </button>
+
+  <nav
+    id="primary-navigation"
+    class="navigation"
+    [class.navigation-open]="menuOpen"
+    aria-label="Main navigation">
+
+    <a routerLink="/" routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }"
+       (click)="closeMenu()">Home</a>
+
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+    <a routerLink="/programs" (click)="closeMenu()">Programs</a>
+    <a routerLink="/faculty" (click)="closeMenu()">Faculty</a>
+    <a routerLink="/news-events" (click)="closeMenu()">News &amp; Events</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+  </nav>
+</header>

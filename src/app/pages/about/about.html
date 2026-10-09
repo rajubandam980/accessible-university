@@ -1,0 +1,52 @@
+
+<main id="main-content" class="page-container" tabindex="-1">
+  <section class="page-hero" aria-labelledby="about-title">
+    <p class="eyebrow">Discover Northfield</p>
+    <h1 id="about-title">About Our Department</h1>
+    <p>
+      Preparing the next generation of computer scientists through
+      education, research, and innovation.
+    </p>
+  </section>
+
+  <section class="content-section" aria-labelledby="mission-title">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">Who We Are</p>
+        <h2 id="mission-title">Our Mission</h2>
+        <p>
+          The Department of Computer Science is dedicated to helping
+          students understand computing fundamentals, build practical
+          skills, and develop technology that benefits society.
+        </p>
+        <p>
+          Through collaborative learning, research, and hands-on
+          projects, students can prepare for careers in a changing
+          technology landscape.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <span class="mission-icon" aria-hidden="true">🎓</span>
+        <h2>Our Vision</h2>
+        <p>
+          To foster a community of curious thinkers, responsible
+          innovators, and lifelong learners.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section values-section"
+           aria-labelledby="values-title">
+    <p class="eyebrow">What Guides Us</p>
+    <h2 id="values-title">Our Core Values</h2>
+
+    <div class="card-grid">
+      <article class="info-card" *ngFor="let value of values">
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
+      </article>
+    </div>
+  </section>
+</main>

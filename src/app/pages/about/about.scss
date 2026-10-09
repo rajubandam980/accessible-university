@@ -1,0 +1,93 @@
+
+:host {
+  display: block;
+}
+
+.page-container {
+  color: #10213d;
+}
+
+.page-hero {
+  padding: 4rem 7%;
+  background: #071b3b;
+  color: #fff;
+}
+
+.page-hero h1 {
+  max-width: 800px;
+  margin: 0.5rem 0;
+  font: 700 clamp(2rem, 5vw, 3.5rem) Georgia, serif;
+}
+
+.page-hero > p:last-child {
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  color: #8a5b00;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.page-hero .eyebrow {
+  color: #ffca55;
+}
+
+.content-section {
+  padding: 3.5rem 7%;
+}
+
+.content-section h2 {
+  font: 700 clamp(1.7rem, 3vw, 2.4rem) Georgia, serif;
+}
+
+.content-section p {
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mission-card,
+.info-card {
+  padding: 1.5rem;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.mission-card {
+  border-top: 4px solid #ffbf36;
+}
+
+.mission-icon {
+  font-size: 2rem;
+}
+
+.values-section {
+  background: #f5f7fa;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.info-card h3 {
+  font-family: Georgia, serif;
+}
+
+@media (max-width: 700px) {
+  .about-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

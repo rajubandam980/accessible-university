@@ -1,0 +1,152 @@
+
+:host {
+  display: block;
+  color: #10213d;
+}
+
+.page-hero {
+  padding: 4rem 7%;
+  background: #071b3b;
+  color: #fff;
+}
+
+.page-hero h1 {
+  font: 700 clamp(2rem, 5vw, 3.5rem) Georgia, serif;
+}
+
+.page-hero .eyebrow {
+  color: #ffca55;
+}
+
+.page-hero p {
+  line-height: 1.8;
+}
+
+.eyebrow {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  padding: 3.5rem 7%;
+}
+
+.contact-section h2 {
+  font: 700 clamp(1.5rem, 3vw, 2.2rem) Georgia, serif;
+}
+
+.contact-information,
+.contact-form-wrapper {
+  min-width: 0;
+}
+
+.contact-information > p,
+.contact-item p,
+.contact-item address {
+  line-height: 1.8;
+}
+
+.contact-item {
+  margin-top: 2rem;
+}
+
+.contact-item h3 {
+  margin-bottom: 0.4rem;
+}
+
+.contact-item address {
+  font-style: normal;
+}
+
+.contact-item a {
+  color: #0645ad;
+  text-underline-offset: 3px;
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-field label span {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 0.75rem;
+  border: 1px solid #66748b;
+  border-radius: 4px;
+  background: #fff;
+  color: #10213d;
+}
+
+.form-field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-field [aria-invalid="true"] {
+  border: 2px solid #a32020;
+}
+
+.field-error {
+  margin: 0.4rem 0 0;
+  color: #a32020;
+  font-weight: 600;
+}
+
+.button {
+  display: inline-block;
+  min-height: 46px;
+  padding: 0.8rem 1.25rem;
+  border: 2px solid #071b3b;
+  border-radius: 4px;
+  background: #071b3b;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #17355d;
+}
+
+.success-message {
+  padding: 1.5rem;
+  border: 2px solid #247343;
+  border-radius: 8px;
+  background: #f0faf3;
+  color: #163d27;
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible,
+.button:focus-visible,
+.contact-item a:focus-visible {
+  outline: 3px solid #a56b00;
+  outline-offset: 3px;
+}
+
+@media (max-width: 750px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 6%;
+  }
+}

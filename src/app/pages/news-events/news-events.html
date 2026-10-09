@@ -1,0 +1,66 @@
+
+<main id="main-content" class="page-container" tabindex="-1">
+  <section class="page-hero" aria-labelledby="news-title">
+    <p class="eyebrow">Stay Informed</p>
+    <h1 id="news-title">News &amp; Events</h1>
+    <p>Discover what's happening across our computer science community.</p>
+  </section>
+
+  <section class="content-section" aria-labelledby="updates-title">
+    <h2 id="updates-title">Department Updates</h2>
+
+    <div class="filter-group" role="group"
+         aria-label="Filter news and events">
+      <button type="button"
+              [class.selected]="selectedCategory === 'All'"
+              [attr.aria-pressed]="selectedCategory === 'All'"
+              (click)="setCategory('All')">
+        All Updates
+      </button>
+
+      <button type="button"
+              [class.selected]="selectedCategory === 'Event'"
+              [attr.aria-pressed]="selectedCategory === 'Event'"
+              (click)="setCategory('Event')">
+        Events
+      </button>
+
+      <button type="button"
+              [class.selected]="selectedCategory === 'News'"
+              [attr.aria-pressed]="selectedCategory === 'News'"
+              (click)="setCategory('News')">
+        News
+      </button>
+
+      <button type="button"
+              [class.selected]="selectedCategory === 'Research'"
+              [attr.aria-pressed]="selectedCategory === 'Research'"
+              (click)="setCategory('Research')">
+        Research
+      </button>
+    </div>
+
+    <p aria-live="polite">
+      Showing {{ filteredItems.length }} updates
+    </p>
+
+    <div class="updates-list">
+      <article class="update-card" *ngFor="let item of filteredItems">
+        <div class="update-content">
+          <span class="category-tag">{{ item.category }}</span>
+          <h3>{{ item.title }}</h3>
+          <p class="update-date">{{ item.date }}</p>
+          <p>{{ item.description }}</p>
+
+          <p *ngIf="item.location">
+            <strong>Location:</strong> {{ item.location }}
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <p *ngIf="filteredItems.length === 0" role="status">
+      No updates are available in this category.
+    </p>
+  </section>
+</main>
